@@ -1,12 +1,26 @@
 
 CypherNet
 =========
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/mtranter/CypherNet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build status](https://ci.appveyor.com/api/projects/status/mtpg771qhljc3jai?svg=true)](https://ci.appveyor.com/project/mtranter/cyphernet)
 
 A .Net API for the Neo4j HTTP Transactional Endpoint. (v2.0.0)
 
 Exposes strongly typed Graph Query API based on the Neo4j [Cypher Query Language](http://docs.neo4j.org/chunked/milestone/cypher-query-lang.html).
 
-
+<dl>
+    <dt>Connection String</dt>
+    <dd></dd>
+</dl>
+```C#
+var clientFactory = Fluently.Configure("Server=http://localhost:7474/db/data/;User Id=neo4j;Password=password").CreateSessionFactory();
+var cypherEndpoint = clientFactory.Create();
+```
+or for Unauthd:
+```C#
+var clientFactory = Fluently.Configure("http://localhost:7474/db/data/").CreateSessionFactory();
+var cypherEndpoint = clientFactory.Create();
+```
 <dl>
     <dt>Usage</dt>
     <dd></dd>
